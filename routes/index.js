@@ -6,6 +6,18 @@ router.get('/', async (ctx, next) => {
   })
 })
 
+router.get('/pug', async (ctx, next) => {
+  await ctx.render('pug', {
+    title: 'Hello pug!'
+  })
+})
+
+router.get('/ejs', async (ctx, next) => {
+  await ctx.render('ejs', {
+    title: 'Hello ejs!'
+  })
+})
+
 router.get('/vue', async (ctx, next) => {
   await ctx.render('vue', {
     title: 'Hello Koa 2!'
