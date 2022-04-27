@@ -6,6 +6,12 @@ router.get('/', async (ctx, next) => {
   })
 })
 
+router.get('/vue', async (ctx, next) => {
+  await ctx.render('vue', {
+    title: 'Hello Koa 2!'
+  })
+})
+
 router.get('/user', async (ctx, next) => {
   ctx.body = {
     nickName: 'tom',
