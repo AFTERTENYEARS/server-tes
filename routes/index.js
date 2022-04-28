@@ -32,12 +32,27 @@ router.get('/user', async (ctx, next) => {
   }
 })
 
-router.post('/user/nickName', async (ctx, next) => {
-  ctx.body = {
+router.post('/user', async (ctx, next) => {
+
+  const { id } = ctx.request.body
+
+  const tom = {
     nickName: 'tom',
+    age: '3',
     mobile: '17666111185',
     email: '17666111185@163.com'
   }
+
+  const jerry = {
+    nickName: 'jerry',
+    age: '2',
+    mobile: '18777222296',
+    email: '18777222296@163.com'
+  }
+
+  const ret = id === '1001' ? tom : jerry
+
+  ctx.body = ret
 })
 
 module.exports = router
